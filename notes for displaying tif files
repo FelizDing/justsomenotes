@@ -1,2 +1,3 @@
 #locate to the folder where you store all the tifs
-convert_tif_to_mp4.py WT_1_D.tif WT_1_D.mp4 -t 30.0 -slow_down_factor 0.01
+
+$ for f in *.tif; do outname=${f%.*}'.mp4'; convert_tif_to_mp4.py $f 'movies/'$outname -slow_down_factor 0.01; done
