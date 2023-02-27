@@ -2,6 +2,7 @@
 # cd to the folder with a strain's analysis, eg. UD803, and my output folder is called "UD803 output", under the same folder where UD803 is stored
 cd /Users/alexis/Dropbox/Research/GEM/Intestine_GEM_selected/UD803\ ints_wt/
 cd ..
+mkdir UD803 output
 find UD803\ ints_wt/ -type f -name "*.json" -exec cp {} UD803 output/ \;
 Get-ChildItem -Path "UD803 ints_wt"/" -Recurse -Filter "*.json" | Copy-Item -Destination "UD803 output/"
 
