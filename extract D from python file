@@ -22,3 +22,15 @@ for file in *.json
   # Write the D_msd key and value to the CSV file
   echo "D_msd (um^2/s),$d_msd" >> $output_file
 done
+
+
+# If output D_pwd (um^2/s),value, just change the msd to pwd
+output_file2="D_pwd_values.csv"
+echo "D_pwd (um^2/s),value" > $output_file2
+for file in *.json
+  do
+  # Extract the value of "D_pwd (um^2/s)" from the file
+  d_pwd=$(jq -r '.["D_pwd (um^2/s)"]' "$file")
+  # Write the D_pwd key and value to the CSV file
+  echo "D_pwd (um^2/s),$d_pwd" >> $output_file2
+done
