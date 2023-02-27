@@ -34,3 +34,6 @@ for file in *.json
   # Write the D_pwd key and value to the CSV file
   echo "D_pwd (um^2/s),$d_pwd" >> $output_file2
 done
+
+
+#everytime processed one dataset i can just change the "output" folder name to another name and continue with the next "output"
