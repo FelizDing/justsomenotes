@@ -1,10 +1,10 @@
 # Extract the .json files first and output them to a new folder
-# cd to the folder with a strain's analysis, eg. UD803, and my output folder is called "UD803 output", under the same folder where UD803 is stored
-cd /Users/alexis/Dropbox/Research/GEM/Intestine_GEM_selected/UD803\ ints_wt/
+# cd to the folder with a strain's analysis, eg. UD803, and my output folder is called "UD803_output", under the same folder where UD803 is stored
+cd /Users/alexis/Dropbox/Research/GEM/Intestine_GEM_selected/UD803_ints_wt/
 cd ..
-mkdir UD803 output
-find UD803\ ints_wt/ -type f -name "*.json" -exec cp {} UD803 output/ \;
-Get-ChildItem -Path "UD803 ints_wt"/" -Recurse -Filter "*.json" | Copy-Item -Destination "UD803 output/"
+mkdir UD803_output
+find UD803_ints_wt/ -type f -name "*.json" -exec cp {} UD803_output/ \;
+Get-ChildItem -Path "UD803_ints_wt"/" -Recurse -Filter "*.json" | Copy-Item -Destination "UD803_output/"
 
 # Now I should see the folder "output" full of many .json files
 # Next extract all the D of MSD values from all the .json files and output them into a single .csv folder
