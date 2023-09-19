@@ -1,3 +1,4 @@
 # If it is nd2 images not movies, I need to convert .nd2 file to .png instead of mp4. Use fiji function: Processing ->Batch ->Macro
 # After obtaining the PNGs, go to the folder that contains the PNGs, and do the following:
-  echo "<html><body>$(ls *.png | awk '{print "<img src=\""$1"\" style=\"margin-right:5px;\" width=\"220\">"}')</body></html>" > look_at_me.html
+ echo "<html><body>$(ls *.png | awk '{print "<img src=\""$1"\" style=\"margin-right:5px;\" width=\"200\">"}')</body></html>" > look_at_me.html
+
