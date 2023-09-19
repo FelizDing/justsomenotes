@@ -2,3 +2,10 @@
 # After obtaining the PNGs, go to the folder that contains the PNGs, and do the following:
  echo "<html><body>$(ls *.png | awk '{print "<img src=\""$1"\" style=\"margin-right:5px;\" width=\"220\">"}')</body></html>" > look_at_me.html
 # after getting htmls I can export and save them as PDF
+
+# If the above does not work, alternatively, try:
+printf "<html><body>" > look_at_me.html
+for file in *.png; do
+    printf "<img src=\"%s\" style=\"margin-right:5px; margin-bottom:10px;\" width=\"200\">" "$file" >> look_at_me.html
+done
+printf "</body></html>" >> look_at_me.html
