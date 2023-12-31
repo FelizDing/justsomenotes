@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# 母文件夹路径
+parent_dir="/Volumes/T7/GEM_3.0_data/Intestine_GEM_filtered/UD1018_ints_unc-83"
+
+# 输出文件夹名称，将会在母文件夹内创建
+output_dir_name="outputfile"
+
+# 创建输出文件夹
+mkdir -p "$parent_dir/$output_dir_name"
+
+# 文件计数器
+counter=1
+
+# 遍历所有子文件夹中的 peaks_tracks_params.json 文件
+for subdir in "$parent_dir"/ges-1_unc-83_*/; do
+  # 构造源文件路径
+  json_file="$subdir/peaks_tracks_params.json"
+
+  # 如果文件存在
+  if [[ -f "$json_file" ]]; then
+    # 构造目标文件路径，包括计数器作为序号
+    target_file="$parent_dir/$output_dir_name/peaks_tracks_params_$counter.json"
+
+    # 复制文件
+    cp "$json_file" "$target_file"
+
+    # 更新文件计数器
+    ((counter++))
+  fi
+done
+
+echo "所有 peaks_tracks_params.json 文件已被复制到 $parent_dir/$output_dir_name."
