@@ -3,6 +3,9 @@
  echo "<html><body>$(ls *.png | awk '{print "<img src=\""$1"\" style=\"margin-right:5px;\" width=\"220\">"}')</body></html>" > look_at_me.html
 # after getting htmls I can export and save them as PDF
 
+#Or:
+echo "<html><body>" > look_at_me.html && ls -1 *.png | xargs -I{} echo "<img src=\"{}\" style=\"margin-right:5px;\" width=\"220\">" >> look_at_me.html && echo "</body></html>" >> look_at_me.html
+
 # If the above does not work, alternatively, try:
 printf "<html><body>" > look_at_me.html
 for file in *.png; do
